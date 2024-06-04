@@ -1,10 +1,11 @@
 package com.joy.joyrpc.server;
 
+import com.joy.joyrpc.RpcApplication;
 import com.joy.joyrpc.model.RpcRequest;
 import com.joy.joyrpc.model.RpcResponse;
 import com.joy.joyrpc.registry.LocalRegistry;
-import com.joy.joyrpc.serializer.JdkSerialize;
 import com.joy.joyrpc.serializer.Serializer;
+import com.joy.joyrpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -23,7 +24,7 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
-        final Serializer serializer = new JdkSerialize();
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         // 记录日志
         System.out.println("Received request" + request + " " +request.uri());

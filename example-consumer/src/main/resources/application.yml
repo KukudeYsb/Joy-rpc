@@ -1,0 +1,6 @@
+rpc.name: 杨世博
+rpc.version: 3.0
+rpc.serverPort: 8082
+rpc.serverHost: 127.0.0.1
+rpc.mock: false
+rpc.serializer: hessian

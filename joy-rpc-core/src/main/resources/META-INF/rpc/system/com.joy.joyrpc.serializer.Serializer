@@ -1,0 +1,2 @@
+jdk=com.joy.joyrpc.serializer.JdkSerializer
+hessian=com.joy.joyrpc.serializer.HessianSerializer

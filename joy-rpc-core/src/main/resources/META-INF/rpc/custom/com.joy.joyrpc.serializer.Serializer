@@ -1,0 +1,2 @@
+json=com.joy.joyrpc.serializer.JsonSerializer
+kryo=com.joy.joyrpc.serializer.KryoSerializer

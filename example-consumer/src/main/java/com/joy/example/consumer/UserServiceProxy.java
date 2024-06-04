@@ -1,14 +1,12 @@
 package com.joy.example.consumer;
 
-import cn.hutool.db.Page;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import cn.hutool.http.server.HttpServerResponse;
 import com.joy.example.common.model.User;
 import com.joy.example.common.service.UserService;
 import com.joy.joyrpc.model.RpcRequest;
 import com.joy.joyrpc.model.RpcResponse;
-import com.joy.joyrpc.serializer.JdkSerialize;
+import com.joy.joyrpc.serializer.JdkSerializer;
 import com.joy.joyrpc.serializer.Serializer;
 
 import java.io.IOException;
@@ -22,7 +20,7 @@ public class UserServiceProxy implements UserService {
     @Override
     public User getUser(User user) {
         // 指定序列化器
-        Serializer serializer = new JdkSerialize();
+        Serializer serializer = new JdkSerializer();
 
         // 发请求
         RpcRequest rpcRequest = RpcRequest.builder()
