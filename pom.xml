@@ -13,6 +13,7 @@
         <module>example-consumer</module>
         <module>example-provider</module>
         <module>joy-rpc-easy</module>
+        <module>joy-rpc-core</module>
     </modules>
 
     <properties>
